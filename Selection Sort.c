@@ -13,8 +13,17 @@
 
 
 int main(void) {
-	int arr[] = {10,23,11,3,567,34,2,3};
-	int arrSize = sizeof(arr)/sizeof(int);
+	int arrSize = 0;
+	printf("Enter array size: \n");
+	scanf("%d", &arrSize);
+
+	int *arr = malloc(sizeof(int)*arrSize);
+
+	for(int i=0;i<arrSize;i++){
+		printf("Enter %d value:\n", i+1);
+		scanf("%d",&arr[i]);
+	}
+
 
 	for(int i=0;i<arrSize;i++){
 		int min = arr[i];
@@ -31,6 +40,7 @@ int main(void) {
 	for(int i=0;i<arrSize;i++){
 		printf("%d ",arr[i]);
 	}
+	free(arr);
 	printf("\n");
 	return 0;
 }
